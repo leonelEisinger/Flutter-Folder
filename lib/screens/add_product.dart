@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../widgets/task_list.dart';
 
 class addNew extends StatelessWidget {
     @override

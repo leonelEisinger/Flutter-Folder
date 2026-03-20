@@ -10,18 +10,18 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: [
           TaskList(),
-          FloatingActionButton(
-            onPressed: () => {
-            Navigator.push(
-              context, 
-              MaterialPageRoute(
-                builder: (context) => addNew()
-                )
-              )
-            },
-            child: const Icon(Icons.add)
-          )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => {
+        Navigator.push(
+          context, 
+          MaterialPageRoute(
+            builder: (context) => addNew()
+            )
+          )
+        },
+        child: const Icon(Icons.add)
       ),
     );
   }

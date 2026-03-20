@@ -6,7 +6,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Assign People To Tasks")),
+      appBar: AppBar(title: Text("Assigned People To Tasks")),
       body: Column(
         children: [
           TaskList(),

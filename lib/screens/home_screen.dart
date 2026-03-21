@@ -1,4 +1,4 @@
-import 'package:a3/widgets/task_item.dart';
+import 'package:flutter_application_1/widgets/task_item.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/task_provider.dart';
@@ -13,9 +13,9 @@ class HomeScreen extends StatelessWidget {
 
     final taskProvider = Provider.of<TaskProvider>(context);
 
-    var idle = 0; // Total Comprados <- if comprado/marcado ou nesse caso total de pessoas que terminaram a tarefa -> +
+    var idle = taskProvider.idleqtd; // Total Comprados <- if comprado/marcado ou nesse caso total de pessoas que terminaram a tarefa -> +
     var tasks = taskProvider.totalTasks(); // para Comprar
-    var total = 0; // qtd total de produtos
+    var total = taskProvider.totalQtdPeople(); // qtd total de produtos
 
     return Scaffold(
       appBar: AppBar(title: Text("Assigned People To Tasks")),

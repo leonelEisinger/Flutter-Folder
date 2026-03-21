@@ -13,14 +13,29 @@ class TaskProvider with ChangeNotifier {
   List<Task> get tasks => _tasks;
 
   int get total => _tasks.length;
+  int get totalQtd => _tasks.fold(0, (sum, task) => sum + task.qtd);
+  int idleqtd = 0;
 
   void toggleTaskCompletion(int id) {
     final task = _tasks.firstWhere((task) => task.id == id);
     task.toggleCompleted();
+
+    idleqtd = _tasks
+      .where((task) => task.isCompleted)
+      .fold(0, (sum, task) => sum + task.qtd);
+
     notifyListeners();
   }
 
   int totalTasks() {
     return total;
+  }
+
+  int totalQtdPeople() {
+    return totalQtd;
+  }
+
+  int totalIdle(){
+    return idleqtd;
   }
 }

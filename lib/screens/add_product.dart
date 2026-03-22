@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-class addNew extends StatelessWidget {
+class addNew extends StatefulWidget {
+  @override
+  State<addNew> createState() => _addNewState();
+}
+
+class _addNewState extends State<addNew> {
     @override
     Widget build(BuildContext context) {
       return Scaffold(
